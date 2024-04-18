@@ -2,15 +2,15 @@
 # lab7
 Lab 7: Binary Search Trees
 
-Name: Your Name Goes Here
+Name: Kelig
 
 Lab Instructions: [https://cs.oberlin.edu/~cs151/lab-7/](https://cs.oberlin.edu/~cs151/lab-7/)
 
 ## Questions
 
-1. Did you collaborate with anyone on the warmup?  If so, whom did you collaborate with?
+1. Did you collaborate with anyone on the warmup?  If so, whom did you collaborate with? No one yet
 
-2. How much time do you think you spent on this lab?
+2. How much time do you think you spent on this lab? 13 hours
 
-3. Did you follow the Honor Code?
+3. Did you follow the Honor Code? I havw adhered to the honor Code in this Assignment
 

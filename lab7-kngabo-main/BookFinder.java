@@ -184,6 +184,24 @@ public class BookFinder {
          * Then call the addBook method to add the new BookData object to all 
          * three of our Binary Search Trees.
          */
+        try {
+            Scanner scanner = new Scanner(new File(path));
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] fields = line.split(",");
+                String isbn = fields[0];
+                String[] authors = fields[1].split("/");
+                String title = fields[2];
+                String publisher = fields[3];
+                float rating = Float.parseFloat(fields[4]);
+                
+                BookData bookData = new BookData(isbn, authors, title, publisher, rating);
+                addBook(bookData);
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e.getMessage());
+        }
     }
 
     /**
@@ -202,7 +220,12 @@ public class BookFinder {
          * - Else, return the list of BookData from inside the BookLookup 
          *   stored in the node.
          */
-        return new ArrayList<BookData>(); // Placeholder -- please remove this
+        MyBinarySearchTreeNode<BookLookup> node = this.isbnToData.find(isbn);
+        if (node == null) {
+            return new ArrayList<>();
+        } else {
+            return node.getItem().getBooks();
+        }
     }
 
     /**
@@ -220,7 +243,12 @@ public class BookFinder {
          * - Else, return the list of BookData from inside the BookLookup 
          *   stored in the node.
          */
-        return new ArrayList<BookData>(); // Placeholder -- please remove this
+        MyBinarySearchTreeNode<BookLookup> node = this.authorToData.find(author);
+        if (node == null) {
+            return new ArrayList<>();
+        } else {
+            return node.getItem().getBooks();
+        }
     }
 
     /**
@@ -238,7 +266,12 @@ public class BookFinder {
          * - Else, return the list of BookData from inside the BookLookup 
          *   stored in the node.
          */
-        return new ArrayList<BookData>(); // Placeholder -- please remove this
+        MyBinarySearchTreeNode<BookLookup> node = this.titleToData.find(title);
+        if (node == null) {
+            return new ArrayList<>();
+        } else {
+            return node.getItem().getBooks();
+    }
     }
 
     /**
@@ -256,6 +289,11 @@ public class BookFinder {
          * - Else, return the list of BookData from inside the BookLookup 
          *   stored in the node.
          */
-        return new ArrayList<BookData>(); // Placeholder -- please remove this
+        MyBinarySearchTreeNode<BookLookup> node = this.publisherToData.find(publisher);
+        if (node == null) {
+            return new ArrayList<>();
+        } else {
+            return node.getItem().getBooks();
+        }
     }
 }

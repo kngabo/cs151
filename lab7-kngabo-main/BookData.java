@@ -38,4 +38,8 @@ public class BookData {
         this.publisher = publisher;
         this.rating = rating;
     }
+
+    public BookData(String isbn2, String[] authors2, String title2, String publisher2, double rating2) {
+        //TODO Auto-generated constructor stub
+    }
 }
